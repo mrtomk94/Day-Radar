@@ -1,0 +1,65 @@
+# Chạy backtest bằng nút "Run workflow" trong tab Actions. Kết quả hiện ở tab Backtest trên trang.
+name: Day Radar backtest
+
+on:
+  workflow_dispatch:
+    inputs:
+      scope:
+        description: "Phạm vi mã: watchlist, nasdaq100, sp500, gainers hoặc list"
+        default: watchlist
+      symbols:
+        description: "Danh sách mã (khi phạm vi là list), ví dụ: AAPL,NVDA"
+        default: ""
+      topN:
+        description: "Số mã (với nasdaq100 / sp500 / gainers)"
+        default: "30"
+      timeframes:
+        description: "Khung: 5m,15m,30m,1h"
+        default: "15m,1h"
+      modes:
+        description: "Chế độ: fibo,ema"
+        default: "fibo,ema"
+      direction:
+        description: "long, short hoặc both"
+        default: long
+      days:
+        description: "Số ngày (15m tối đa ~59, 1h tối đa ~729)"
+        default: "59"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0
+      - name: Lấy dữ liệu lần trước
+        run: node tools/restore.js "${{ steps.pages.outputs.base_url }}"
+      - name: Backtest
+        run: node server.js --backtest
+        env:
+          DATA_DIR: public/data
+          BT_PARAMS: ${{ toJSON(inputs) }}
+      - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
+        with:
+          path: public
+      - name: Đăng lên GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5
