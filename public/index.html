@@ -439,7 +439,7 @@ function drawEquity(bt) {
 function niceStep(x) { const p = Math.pow(10, Math.floor(Math.log10(x || 1))); const f = x / p; return (f < 1.5 ? 1 : f < 3 ? 2 : f < 7 ? 5 : 10) * p; }
 
 // ---------- Báo cáo + quyền chọn ----------
-const DEEP = 'https://claude.ai/artifact/XknCJSxC14JbyHvQVTmxPe';
+const DEEP = 'earnings.html';
 const money = v => { if (v == null || !isFinite(v)) return '–'; const a = Math.abs(v), s = v < 0 ? '−$' : '$'; return a >= 1e12 ? s + (a / 1e12).toFixed(2) + 'T' : a >= 1e9 ? s + (a / 1e9).toFixed(2) + 'B' : a >= 1e6 ? s + (a / 1e6).toFixed(1) + 'M' : s + a.toFixed(0); };
 const fdate = t => t ? new Date(t).toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric' }) : '–';
 function viewReports() {
