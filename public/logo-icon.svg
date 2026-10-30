@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="K-Solution Stock">
+  <defs>
+    <linearGradient id="ksbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#13233d"/>
+      <stop offset="1" stop-color="#0b1526"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#ksbg)"/>
+  <!-- nến nền -->
+  <rect x="44" y="40" width="5" height="12" rx="1" fill="#1f6feb" opacity=".55"/>
+  <rect x="51" y="34" width="5" height="18" rx="1" fill="#1f6feb" opacity=".8"/>
+  <!-- thân chữ K -->
+  <rect x="13" y="12" width="9" height="40" rx="2" fill="#ffffff"/>
+  <!-- chân dưới -->
+  <path d="M22 33 L38 52 H27.5 L19 41.5 Z" fill="#ffffff"/>
+  <!-- tay trên thành mũi tên đi lên -->
+  <path d="M19 35 L36.5 17.5" stroke="#3fcf98" stroke-width="8" stroke-linecap="round"/>
+  <path d="M30 12 H45 V27 Z" fill="#3fcf98"/>
+</svg>

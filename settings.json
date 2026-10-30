@@ -1,0 +1,80 @@
+{
+  "sources": {
+    "gainers": true,
+    "actives": true,
+    "sp500": true,
+    "nasdaq100": true,
+    "watchlist": true
+  },
+  "watchlist": [
+    "AAPL",
+    "NVDA",
+    "TSLA",
+    "AMD",
+    "META",
+    "PLTR",
+    "SOFI",
+    "MARA",
+    "MU",
+    "SPCX",
+    "GOOGL",
+    "NFLX",
+    "MSFT",
+    "AMZN"
+  ],
+  "gainersCount": 25,
+  "indexTopN": 25,
+  "minPrice": 2,
+  "minDollarVolM": 5,
+  "timeframes": [
+    "15m",
+    "1h"
+  ],
+  "modes": [
+    "fibo",
+    "ema"
+  ],
+  "direction": "long",
+  "waveLookback": 40,
+  "confirmBars": 1,
+  "minPumpPct": 4,
+  "minDumpPct": 4,
+  "maxSignalAge": 4,
+  "expiryBars": 12,
+  "feePct": 0,
+  "flatAtClose": true,
+  "fibo": {
+    "entries": [
+      0.236,
+      0.382,
+      0.5
+    ],
+    "sl": 0.618
+  },
+  "ema": {
+    "periods": [
+      9,
+      20
+    ],
+    "slPct": 1.5
+  },
+  "scanEveryMin": 15,
+  "scanPremarket": false,
+  "telegram": {
+    "enabled": true,
+    "onlyTimeframes": [
+      "15m",
+      "1h"
+    ],
+    "options": true,
+    "earnings": true
+  },
+  "reportEveryHours": 6,
+  "options": {
+    "enabled": true,
+    "minVolume": 1000,
+    "minRatio": 2,
+    "minPremiumM": 1,
+    "maxDte": 60
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "day-radar",
+  "version": "1.0.0",
+  "description": "Quét cổ phiếu Mỹ tìm sóng đẩy trong ngày, báo điểm vào lệnh hồi Fibo/EMA, backtest",
+  "main": "server.js",
+  "scripts": { "start": "node server.js", "demo": "DEMO=1 node server.js" },
+  "engines": { "node": ">=18" },
+  "private": true
+}

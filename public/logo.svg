@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 64" role="img" aria-label="K-Solution Stock">
+  <defs>
+    <linearGradient id="ksbg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#13233d"/>
+      <stop offset="1" stop-color="#0b1526"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#ksbg2)"/>
+  <rect x="44" y="40" width="5" height="12" rx="1" fill="#1f6feb" opacity=".55"/>
+  <rect x="51" y="34" width="5" height="18" rx="1" fill="#1f6feb" opacity=".8"/>
+  <rect x="13" y="12" width="9" height="40" rx="2" fill="#ffffff"/>
+  <path d="M22 33 L38 52 H27.5 L19 41.5 Z" fill="#ffffff"/>
+  <path d="M19 35 L36.5 17.5" stroke="#3fcf98" stroke-width="8" stroke-linecap="round"/>
+  <path d="M30 12 H45 V27 Z" fill="#3fcf98"/>
+  <text x="78" y="32" font-family="'Be Vietnam Pro','Segoe UI',Arial,sans-serif" font-weight="900" font-size="26" letter-spacing="-0.5" fill="currentColor">K-SOLUTION</text>
+  <text x="79" y="54" font-family="'Be Vietnam Pro','Segoe UI',Arial,sans-serif" font-weight="800" font-size="15" letter-spacing="6" fill="#1f6feb">STOCK</text>
+  <path d="M174 50 L188 43 L198 47 L216 37" stroke="#3fcf98" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="216" cy="37" r="3.2" fill="#3fcf98"/>
+</svg>
